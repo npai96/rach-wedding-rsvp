@@ -69,13 +69,15 @@ form .radio-group {
 
 .radio-option {
   display: inline-flex;
-  align-items: center; /* Ensures vertical alignment */
+  align-items: baseline; /* ✅ aligns text and radio button to the same baseline */
   gap: 0.4rem;
   white-space: nowrap;
   font-weight: normal;
   color: #4a0011;
-  line-height: 1.2; /* Helps text align better */
+  font-size: 1rem;
+  line-height: 1.2;
 }
+
 
 button[type="submit"] {
   margin-top: 2rem;
