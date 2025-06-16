@@ -67,11 +67,20 @@
   </div>
 </body>
 <script>
-  document.querySelector("form").addEventListener("submit", function (e) {
-    // Slight delay before redirect to allow Zapier to receive the data
-    setTimeout(() => {
-      window.location.href = "thank-you.html";
-    }, 500); // 500ms should be enough for the webhook POST to complete
+  const form = document.querySelector("form");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Stop default form submission
+
+    const formData = new FormData(form);
+
+    // Send form data to Zapier via fetch
+    await fetch(form.action, {
+      method: "POST",
+      body: formData,
+    });
+
+    // Redirect after submission
+    window.location.href = "thank-you.html";
   });
 </script>
 </html>
