@@ -28,8 +28,10 @@
         </div>
       </div>
 
-      <label for="party">Number of People in Your Party</label><br />
-      <input type="number" name="Number in Party" id="party" min="1" required /><br />
+      <div class="form-group">
+        <label for="party">Number of People in Your Party</label>
+        <input type="number" name="Number in Party" id="party" min="1" required />
+      </div>
 
       <div class="form-group">
         <label>Meal Preference</label>
@@ -43,14 +45,20 @@
         </div>
       </div>
 
-      <label for="diet">Any Dietary Restrictions?</label><br />
-      <textarea name="Dietary Restrictions" id="diet" rows="3"></textarea><br />
+      <div class="form-group">
+        <label for="diet">Any Dietary Restrictions?</label>
+        <textarea name="Dietary Restrictions" id="diet" rows="3"></textarea>
+      </div>
 
-      <label for="contactNumber">Contact Number</label><br />
-      <input type="tel" name="Contact Number" id="contactNumber" required /><br />
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="tel" name="Contact Number" id="contactNumber" required />
+      </div>
 
-      <label for="comments">Any Comments?</label><br />
-      <input type="tel" name="Comments" id="comments" /><br />
+      <div class="form-group">
+        <label for="comments">Any Special Requests?</label>
+        <input type="text" name="Comments" id="comments" />
+      </div>
 
       <input type="hidden" name="_redirect" value="thank-you.html" />
 
@@ -58,4 +66,12 @@
     </form>
   </div>
 </body>
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    // Slight delay before redirect to allow Zapier to receive the data
+    setTimeout(() => {
+      window.location.href = "thank-you.html";
+    }, 500); // 500ms should be enough for the webhook POST to complete
+  });
+</script>
 </html>

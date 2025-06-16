@@ -102,3 +102,31 @@ label {
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
+
+/* Mobile UI */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .radio-option {
+    font-size: 1rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
