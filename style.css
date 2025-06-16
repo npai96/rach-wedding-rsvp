@@ -71,6 +71,7 @@ form .radio-option {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  white-space: nowrap; /* ✅ Prevents line break */
   font-weight: normal;
   color: #4a0011;
 }
