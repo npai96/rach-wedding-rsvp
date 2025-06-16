@@ -67,13 +67,14 @@ form .radio-group {
   margin-top: 0.4rem;
 }
 
-form .radio-option {
-  display: flex;
-  align-items: center;
+.radio-option {
+  display: inline-flex;
+  align-items: center; /* Ensures vertical alignment */
   gap: 0.4rem;
-  white-space: nowrap; /* ✅ Prevents line break */
+  white-space: nowrap;
   font-weight: normal;
   color: #4a0011;
+  line-height: 1.2; /* Helps text align better */
 }
 
 button[type="submit"] {
