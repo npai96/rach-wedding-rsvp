@@ -33,17 +33,13 @@
         <input type="number" name="Number in Party" id="party" min="1" required />
       </div>
 
-      <div class="form-group">
-        <label>Meal Preference</label>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="Meal Preference" value="Vegetarian" required /> Vegetarian
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="Meal Preference" value="Non-Vegetarian" required /> Non-Veg
-          </label>
-        </div>
+      <div class="form-group" id="meal-selections-container">
+        <!-- JS will inject per-person dropdowns here -->
       </div>
+
+      <!-- Hidden fields to store counts -->
+      <input type="hidden" name="veg_count" id="veg_count" />
+      <input type="hidden" name="nonveg_count" id="nonveg_count" />
 
       <div class="form-group">
         <label for="diet">Any Dietary Restrictions?</label>
@@ -67,6 +63,42 @@
   </div>
 </body>
 <script>
+  // Meal options
+  const partyInput = document.getElementById("party");
+  const container = document.getElementById("meal-selections-container");
+
+  partyInput.addEventListener("change", () => {
+    const count = parseInt(partyInput.value, 10) || 0;
+    container.innerHTML = ""; // clear previous
+
+    for (let i = 1; i <= count; i++) {
+      const div = document.createElement("div");
+      div.className = "form-group";
+      div.innerHTML = `
+        <label>Meal Preference for Person ${i}</label>
+        <select name="meal_choice_${i}" required>
+          <option value="">Select...</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Non-Vegetarian">Non-Vegetarian</option>
+        </select>`;
+      container.appendChild(div);
+    }
+  });
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const selects = container.querySelectorAll("select");
+    let veg = 0, nonveg = 0;
+
+    selects.forEach(select => {
+      if (select.value === "Vegetarian") veg++;
+      if (select.value === "Non-Vegetarian") nonveg++;
+    });
+
+    document.getElementById("veg_count").value = veg;
+    document.getElementById("nonveg_count").value = nonveg;
+  });
+
+  // Submission
   const form = document.querySelector("form");
   form.addEventListener("submit", async function (e) {
     e.preventDefault(); // Stop default form submission
