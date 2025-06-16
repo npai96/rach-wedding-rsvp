@@ -28,10 +28,6 @@ form {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
 form input,
 form textarea,
 form button {
