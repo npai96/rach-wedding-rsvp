@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RSVP - [Your Names]</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" style="padding-top: 2rem;">
+    <img src="imgs/save_the_date.png" alt="Save the Date" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem; border-radius: 8px; border: none;" />
+
+    <form action="https://hooks.zapier.com/hooks/catch/23387414/uyvl87h/" method="POST" style="margin-top: 2rem;">
+      <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" name="Full Name" id="name" required />
+    </div>
+
+      <div class="form-group">
+      <label>Will you attend?</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="Attending" value="Yes" required /> Yes
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="Attending" value="No" required /> No
+        </label>
+      </div>
+    </div>
+
+      <label for="party">Number of People in Your Party</label><br />
+      <input type="number" name="Number in Party" id="party" min="1" required /><br />
+
+      <div class="form-group">
+      <label>Meal Preference</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="Meal Preference" value="Vegetarian" required /> Vegetarian
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="Meal Preference" value="Non-Vegetarian" required /> Non-Vegetarian
+        </label>
+      </div>
+    </div>
+
+      <label for="diet">Any Dietary Restrictions?</label><br />
+      <textarea name="Dietary Restrictions" id="diet" rows="3"></textarea><br />
+
+      <label for="contactNumber">Contact Number</label><br />
+      <input type="tel" name="Contact Number" id="contactNumber" required /><br />
+
+      <label for="comments">Any Comments?</label><br />
+      <input type="tel" name="Comments" id="comments" /><br />
+
+      <input type="hidden" name="_redirect" value="thank-you.html" />
+
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </div>
+</body>
+</html>
