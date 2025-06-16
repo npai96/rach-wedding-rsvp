@@ -29,7 +29,7 @@ form {
 }
 
 .form-group {
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
 form input,
@@ -63,6 +63,7 @@ form fieldset {
 
 form .radio-group {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 0.4rem;
@@ -70,15 +71,26 @@ form .radio-group {
 
 .radio-option {
   display: inline-flex;
-  align-items: baseline; /* ✅ aligns text and radio button to the same baseline */
+  align-items: baseline;
   gap: 0.4rem;
   white-space: nowrap;
   font-weight: normal;
   color: #4a0011;
-  font-size: 1rem;
-  line-height: 1.2;
 }
 
+
+@media (max-width: 600px) {
+  .radio-group {
+    flex-direction: row;     /* Stack horizontally */
+    align-items: flex-start;    /* Align text to left */
+    gap: 0.75rem;
+  }
+
+  .radio-option {
+    width: auto;
+    height: 0.5rem; /* Adjust height for better touch targets */
+  }
+}
 
 button[type="submit"] {
   margin-top: 2rem;
