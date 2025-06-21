@@ -9,7 +9,9 @@
 <body>
   <div class="container" style="padding-top: 2rem;">
     <img src="imgs/save_the_date.png" alt="Save the Date" style="max-width: 100%; height: auto; display: block; margin: 0 auto 2rem; border-radius: 8px; border: none;" />
-
+    <h3 style="text-align: center; color: #4a0011; font-family: 'Playfair Display', Georgia, serif;">
+      The Pai's cordially invite you to celebrate the union of Rachita and Yash on December 4, 2025
+    </h3>
     <form action="https://hooks.zapier.com/hooks/catch/23387414/uyvl87h/" method="POST" style="margin-top: 2rem;">
       <div class="form-group">
         <label for="name">Full Name</label>
@@ -30,7 +32,13 @@
 
       <div class="form-group">
         <label for="party">Number of People Attending</label>
-        <input type="number" name="Number in Party" id="party" min="1" required />
+        <select name="Number in Party" id="party" required>
+          <option value="">Select...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
       </div>
 
       <div class="form-group" id="meal-selections-container">
