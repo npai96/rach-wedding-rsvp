@@ -32,13 +32,15 @@
 
       <div class="form-group">
         <label for="party">Number of People Attending</label>
-        <select name="Number in Party" id="party" required>
-          <option value="">Select...</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+        <div class="select-wrapper">
+          <select name="Number in Party" id="party" required>
+            <option value="">Select...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
       </div>
 
       <div class="form-group" id="meal-selections-container">
@@ -79,11 +81,13 @@
       div.className = "form-group";
       div.innerHTML = `
         <label>Meal Preference for Person ${i}</label>
-        <select name="meal_choice_${i}" required>
-          <option value="">Select...</option>
-          <option value="Vegetarian">Vegetarian</option>
-          <option value="Non-Vegetarian">Non-Vegetarian</option>
-        </select>`;
+        <div class="select-wrapper">
+          <select name="meal_choice_${i}" required>
+            <option value="">Select...</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+          </select>
+        </div>`;
       container.appendChild(div);
     }
   });
